@@ -1,8 +1,8 @@
 package med.voll.api.dto;
 
-import med.voll.api.endereco.Endereco;
-import med.voll.api.medico.Especialidade;
-import med.voll.api.medico.Medico;
+import med.voll.api.domain.endereco.Endereco;
+import med.voll.api.domain.medico.Especialidade;
+import med.voll.api.domain.medico.Medico;
 
 public record DadosMedicoDetalhadosDTO(Long id, String nome, String email, String telefone, String crm, Especialidade especialidade, Endereco endereco) {
 

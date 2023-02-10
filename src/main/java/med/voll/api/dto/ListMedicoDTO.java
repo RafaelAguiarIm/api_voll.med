@@ -1,7 +1,7 @@
 package med.voll.api.dto;
 
-import med.voll.api.medico.Especialidade;
-import med.voll.api.medico.Medico;
+import med.voll.api.domain.medico.Especialidade;
+import med.voll.api.domain.medico.Medico;
 
 //Neste DTO eu devolvo apenas os campos que são necessários para o cliente
 public record ListMedicoDTO(Long id, String nome, String email, String crm, Especialidade especialidade) {
