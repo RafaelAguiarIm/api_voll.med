@@ -80,7 +80,7 @@ public class MedicoController {
     //Método para detalhar o medico
     @GetMapping("/{id}")
     //A annotation @PathVariable vincula o Id  passado no @DeleteMapping com o id criado no método delete(Long id)
-    public ResponseEntity detalhar(@PathVariable Long id){
+    public ResponseEntity findById(@PathVariable Long id){
         var medico = repository.getReferenceById(id);
         //Cod 200 ok
         return ResponseEntity.ok(new DadosMedicoDetalhadosDTO(medico));
