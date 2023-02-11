@@ -1,4 +1,4 @@
-package med.voll.api.utils;
+package med.voll.api.utils.exceptions;
 
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;

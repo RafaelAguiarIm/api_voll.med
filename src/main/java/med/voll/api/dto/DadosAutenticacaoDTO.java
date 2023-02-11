@@ -1,2 +1,5 @@
-package med.voll.api.dto;public class DadosAutenticacaoDTO {
+package med.voll.api.dto;
+
+public record DadosAutenticacaoDTO(String login, String senha) {
+
 }
