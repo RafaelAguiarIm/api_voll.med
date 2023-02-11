@@ -19,3 +19,6 @@ O projeto consiste na construção do backend de uma API utilizando Spring
 ```
 Foi utilizado o método BCripty para a criptografia do tipo hash para senhas baseado no Blowfish Encryption.
 ```
+
+> Este projeto foi desenvolvido baseado no curso de Spring Boot 3 da Alura, contendo algumas modificações e melhorias de organização.
+> Além disso, o códido possui alguns comentários para auxílios futuro.
