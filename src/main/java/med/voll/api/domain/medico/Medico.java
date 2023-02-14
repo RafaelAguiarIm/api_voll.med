@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.dto.DadosCadastroMedico_DTO;
-import med.voll.api.dto.DadosUpdateMedico_DTO;
+import med.voll.api.dto.med.DadosCadastroMedico_DTO;
+import med.voll.api.dto.med.DadosUpdateMedico_DTO;
 import med.voll.api.domain.endereco.Endereco;
 
 //Anotations JPA

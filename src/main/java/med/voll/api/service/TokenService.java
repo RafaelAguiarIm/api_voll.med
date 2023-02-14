@@ -3,6 +3,9 @@ package med.voll.api.service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
 import med.voll.api.domain.Usuario;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +21,7 @@ public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
 
-    //Codigo da Api JWT
+    //Codigo da Api JWT para gerar o token JWT
     public String gerarToken(Usuario usuario) {
         try {
             var algorithm = Algorithm.HMAC256(secret);
@@ -28,11 +31,26 @@ public class TokenService {
                     .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
         } catch (JWTCreationException exception){
-            throw new RuntimeException("Erro ao gerrar token jwt", exception);
+            throw new RuntimeException("Erro ao gerar token jwt", exception);
         }
 
     }
+
+    //Codigo da Api JWT para validar o token JWT
+    public String getSubject(String tokenJWT){
+        try {
+            var algorithm = Algorithm.HMAC256(secret);
+            return JWT.require(algorithm)
+                    .withIssuer("API Voll.med")
+                    .build()
+                    .verify(tokenJWT)
+                    .getSubject();
+        } catch (JWTVerificationException exception) {
+            throw new RuntimeException("Token JWT inválido ou expirado!");
+        }
+    }
+
     private Instant dataExpiracao() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(1).toInstant(ZoneOffset.of("-03:00"));
     }
 }

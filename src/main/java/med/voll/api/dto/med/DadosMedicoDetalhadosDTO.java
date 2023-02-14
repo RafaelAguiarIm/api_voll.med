@@ -1,4 +1,4 @@
-package med.voll.api.dto;
+package med.voll.api.dto.med;
 
 import med.voll.api.domain.endereco.Endereco;
 import med.voll.api.domain.medico.Especialidade;
@@ -9,4 +9,5 @@ public record DadosMedicoDetalhadosDTO(Long id, String nome, String email, Strin
     public DadosMedicoDetalhadosDTO(Medico medico){
         this(medico.getId(), medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getTelefone(), medico.getEspecialidade(), medico.getEndereco() );
     }
+
 }
